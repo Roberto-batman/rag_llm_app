@@ -3,11 +3,14 @@ import streamlit as st
 import os
 import dotenv
 import uuid
-import sys
-import subprocess
 
+__import__('pysqlite3')    
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+# import subprocess - optional provided by OpenAI
 # Install requirements
-subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+# subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
 
 # Check the OS
 if os.name == 'posix':  # Unix-based systems (Linux & macOS)
