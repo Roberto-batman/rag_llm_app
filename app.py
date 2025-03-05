@@ -1,13 +1,21 @@
+
 import streamlit as st
 import os
 import dotenv
 import uuid
+import sys
+import subprocess
 
-# check if it's linux so it works on Streamlit Cloud
-if os.name == 'posix':
-    __import__('pysqlite3')
-    import sys
-    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# Install requirements
+subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+
+# Check the OS
+if os.name == 'posix':  # Unix-based systems (Linux & macOS)
+    if sys.platform == 'darwin':  # macOS
+        import sqlite3  # Use built-in SQLite for macOS
+    else:  # Linux (e.g., Streamlit Cloud)
+        __import__('pysqlite3')
+        sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 from langchain_openai import ChatOpenAI, AzureChatOpenAI
 from langchain_anthropic import ChatAnthropic
