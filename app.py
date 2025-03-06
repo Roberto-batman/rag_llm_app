@@ -13,12 +13,12 @@ sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 # subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
 
 # Check the OS
-if os.name == 'posix':  # Unix-based systems (Linux & macOS)
-    if sys.platform == 'darwin':  # macOS
-        import sqlite3  # Use built-in SQLite for macOS
-    else:  # Linux (e.g., Streamlit Cloud)
-        __import__('pysqlite3')
-        sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# if os.name == 'posix':  # Unix-based systems (Linux & macOS)
+#    if sys.platform == 'darwin':  # macOS
+#        import sqlite3  # Use built-in SQLite for macOS
+#    else:  # Linux (e.g., Streamlit Cloud)
+#        __import__('pysqlite3')
+#        sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 from langchain_openai import ChatOpenAI, AzureChatOpenAI
 from langchain_anthropic import ChatAnthropic
