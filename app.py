@@ -4,9 +4,10 @@ import os
 import dotenv
 import uuid
 
-# __import__('pysqlite3')    
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# these 3 lines needed by streamlit, not local, and only when running python 3.11 or earlier
+__import__('pysqlite3')    
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # import subprocess - optional provided by OpenAI
 # Install requirements
