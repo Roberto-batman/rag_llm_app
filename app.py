@@ -9,9 +9,10 @@ __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-# import subprocess - optional provided by OpenAI
-# Install requirements
-# subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+# un-commenting these 3 lines last thing Mar 7 to see if it will help Azure work...
+import subprocess - optional provided by OpenAI
+Install requirements
+subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
 
 
 # Check the OS
