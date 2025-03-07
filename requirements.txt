@@ -1,4 +1,4 @@
-pysqlite-binary # was pysqlite3-binary which worked on 
+pysqlite3-binary # tried pysqlite was pysqlite3-binary which worked on streamlit.com
 aiohappyeyeballs==2.4.8
 aiohttp==3.11.13
 aiosignal==1.3.2
