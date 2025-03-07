@@ -12,6 +12,7 @@ import uuid
 # Install requirements
 # subprocess.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
 
+
 # Check the OS
 # if os.name == 'posix':  # Unix-based systems (Linux & macOS)
 #    if sys.platform == 'darwin':  # macOS
